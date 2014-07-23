@@ -666,7 +666,7 @@ function realestates_func( $atts ) {
     }
 
     $output  = '<div id="ors-realestate" class="shortcode">';
-    $output .= '<a href="' . get_permalink($post->ID) . '" rel="bookmark" title="' . the_title_attribute() . '">';
+    $output .= '<a href="' . get_permalink($post->ID) . '" rel="bookmark" title="' . $post->post_title . '">';
     $output .= "<header>$post->post_title</header>";
 
     if ( !has_post_thumbnail( $post->ID ) ) {
