@@ -665,10 +665,6 @@ function realestates_func( $atts ) {
       $custom[$key] = $value[0];
     }
 
-    if ( $custom['available'] == 'Coming Soon' ) $visible = false; else $visible = true;
-
-    $address = $custom['street'] . ", " . $custom['city'] . ", " . $custom['state'] . "  " . $custom['zip'];
-
     $output  = '<div id="ors-realestate" class="shortcode">';
     $output .= '<a href="' . get_permalink($post->ID) . '" rel="bookmark" title="' . the_title_attribute() . '">';
     $output .= "<header>$post->post_title</header>";
