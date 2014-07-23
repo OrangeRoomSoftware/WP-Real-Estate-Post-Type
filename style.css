@@ -1,30 +1,177 @@
-.blog .rental { border:solid 1px #333; border-radius:6px; overflow:hidden; margin-bottom:5px; }
+/* ORS Real Estate Search Box */
+#ors-realestate-search-box {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#ors-realestate-search-box .price_near {
+  width: 100px;
+}
+#ors-realestate-search-box .size_near {
+  width: 100px;
+}
+#ors-realestate-search-box .bedrooms {
+  width: 25px;
+}
+#ors-realestate-search-box .bathrooms {
+  width: 25px;
+}
+#ors-realestate-search-box .text_search {
+  width: 200px;
+}
 
-.rental header { border-bottom: solid 1px #333; padding: 0px; background:#eee; border-radius:6px 6px 0 0; }
-.rental header h2, .rental header h2 a { color: black; }
-.rental header time { display: none; }
-.rental img { float:left; margin:0 5px 10px 10px; }
-.rental .price { display:inline-block; min-width:133px; color:white; background:#900; padding:5px 15px; }
-.rental .title { display:inline-block; padding:5px 15px; }
-.rental .property-type { display:inline-block; padding:5px 15px; float:right; }
-.rental .availability.available-now { display:none; }
-.rental .availability.coming-soon { position:relative; float:right; border:solid 2px #f00; background:rgba(230,0,0,0.5); border-radius:100px 0px 0px 100px; width:70px; height:45px; z-index:3; padding:10px 10px; margin:0px 5px 0px; text-align:center; }
-.rental .p { line-height: 12pt; }
-.rental .p label { display:inline-block; width:120px; margin-right:5px; text-align:right; font-weight:bold; }
-.rental.status-private { opacity:0.3; }
+/* Real Estate Shortcode */
+#ors-realestate.shortcode {
+  display: inline-block;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  min-width: 300px;
+}
+#ors-realestate.shortcode header {
+  font-size: 16pt;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 10px;
+  padding: 5px;
+  color: #555;
+  background: #eee;
+  border-radius: 5px 5px 0 0;
+}
+#ors-realestate.shortcode .attachment-thumbnail {
+  margin: 20px 40px 0;
+}
 
-#ors-rental-search-box { border:solid 1px black; border-radius:5px; padding:10px; background:#eee; color:black; text-align:center; }
-#price_near { margin-right:8px;width:50px; }
-#size_near { margin-right:8px;width:50px; }
-#bedrooms { margin-right:8px;width:15px; }
-#bathrooms { margin-right:8px;width:15px; }
-#text_search { margin-right:8px;width:150px; }
+/* Listings (Excerpts) */
+#ors-realestate.listings {
+  text-align: center;
+}
+#ors-realestate.listings article {
+  display: inline-block;
+  width: 45%;
+  border: solid 1px #eee;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  vertical-align: top;
+  min-height: 150px;
+  text-align: left;
+}
+#ors-realestate.listings section > a {
+  border: solid 1px black;
+  float: left;
+  margin: 0 20px 10px 0;
+}
+#ors-realestate.listings article header {
+  background: #eee;
+  margin-bottom: 5px;
+}
+#ors-realestate.listings article header a {
+  color: black;
+}
+#ors-realestate.listings article header .price {
+  display: inline-block;
+  color: white;
+  background: #900;
+  padding: 3px 5px;
+  border-radius: 5px 0 0 0;
+}
+#ors-realestate.listings article header .title {
+  display: inline-block;
+  padding: 3px 5px;
+}
+#ors-realestate.listings article header .property-type {
+  display: inline-block;
+  padding: 3px 5px;
+  float: right;
+}
 
-.single .rental header { margin-top:15px; border: solid 1px black; border-radius:6px; background:#eee; }
-.single .rental .features ul,
-.single .rental .options ul  { display:block; clear:both; overflow:hidden; }
-.single .rental .features li,
-.single .rental .options li { width:160px;float:left; }
-.single .rental .inquiry-form { margin:20px 0; border:solid 1px #333; border-radius:4px 4px 0 0; padding: 10px; }
-.single .rental .inquiry-form h2 { border-bottom:solid 1px #333; border-radius:4px 4px 0 0; color:black; background:#eee; padding:5px; margin:-10px -10px 5px -10px; }
-a.back-button { display:inline-block; margin:10px 0 0px 10px; border:solid 1px black; border-radius:5px; padding:2px 5px; background:#eee; color:black; }
+/* Single Real Estate */
+
+#ors-realestate.single article {
+  padding: 0;
+}
+#ors-realestate.single article header {
+  border-radius 5px 5px 0 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20pt;
+  background: #eee;
+  color: black;
+}
+#ors-realestate.single article header a {
+  display: inline-block;
+  color: black;
+  padding: 15px;
+}
+#ors-realestate.single article header .price {
+  display: inline-block;
+  color: white;
+  background: #900;
+  border-radius: 5px 0 0 0;
+  float: left;
+  padding: 15px;
+}
+#ors-realestate.single article header .title {
+  display: inline-block;
+  padding: 15px;
+}
+#ors-realestate.single article header .property-type {
+  display: inline-block;
+  float: right;
+  border-radius: 0 5px 0 0;
+  padding: 15px;
+}
+
+
+/* Common Real Estate Styles */
+
+#ors-realestate .availability.available-now {
+  position: relative;
+  float: right;
+  border: solid 2px rgba(0, 230, 0, 0.35);
+  background: rgba(0, 230, 0, 0.25);
+  color: green;
+  border-radius: 100px 0px 0px 100px;
+  width: 90px;
+  height: 35px;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 9pt;
+  font-weight: bold;
+}
+#ors-realestate .availability.coming-soon {
+  position: relative;
+  float: right;
+  border: solid 2px rgba(230, 0, 0, 0.35);
+  background: rgba(230, 0, 0, 0.25);
+  color: red;
+  border-radius: 100px 0px 0px 100px;
+  width: 90px;
+  height: 35px;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 9pt;
+  font-weight: bold;
+}
+#ors-realestate a.back-button {
+  display: block;
+  margin: 10px auto;
+  width: 130px;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 2px 5px;
+  background: #eee;
+  color: black;
+  text-align: center;
+}
+#ors-realestate .not-found {
+  width: 500px;
+  border: solid 1px #900;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px auto 20px;
+  color: #900;
+  background: #fcc;
+}
