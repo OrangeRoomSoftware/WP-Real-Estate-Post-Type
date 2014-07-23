@@ -672,7 +672,7 @@ function realestates_func( $atts ) {
     if ( !has_post_thumbnail( $post->ID ) ) {
       $output .= '<img width="150" height="150" src="' . REALESTATE_PLUGIN_URL . '/nophoto.png" class="attachment-thumbnail wp-post-image realestate-photo" alt="No Photo" title="' . $address . '">';
     } else {
-      $output .= get_the_post_thumbnail($post->ID, 'thumbnail');
+      $output .= get_the_post_thumbnail($post->ID, 'medium');
     }
 
     $output .= "</a></div>";
