@@ -613,7 +613,7 @@ function realestate_content_filter($content) {
   }
 
   if ( $inquiry = get_option('ors-realestate-inquiry-form') ) {
-    $output .= '<div class="inquiry-form">';
+    $output .= '<div id="inquiry-form">';
     $output .= '<h2>Send Email Inquiry</h2>';
     $output .= $inquiry;
     $output .= '</div>';
@@ -621,7 +621,7 @@ function realestate_content_filter($content) {
   }
 
   if ( $tell_a_friend = get_option('ors-realestate-tell-a-friend-form') ) {
-    $output .= '<div class="inquiry-form">';
+    $output .= '<div id="inquiry-form">';
     $output .= '<h2>Tell-A-Friend</h2>';
     $output .= $tell_a_friend;
     $output .= '</div>';
