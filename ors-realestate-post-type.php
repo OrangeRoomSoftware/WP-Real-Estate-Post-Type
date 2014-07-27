@@ -26,7 +26,7 @@ add_filter( 'widget_text', 'do_shortcode' );
 #
 # Site Stylesheet
 #
-add_action('wp_print_styles', 'ors_realestate_template_stylesheets', 10);
+add_action('wp_print_styles', 'ors_realestate_template_stylesheets', 1);
 function ors_realestate_template_stylesheets() {
   wp_enqueue_style('realestate-template-style', REALESTATE_PLUGIN_URL . "/style.css", 'ors-realestate', null, 'all');
 }
@@ -627,7 +627,7 @@ function realestate_content_filter($content) {
     $output .= '</div>';
   }
 
-  $output .= '<a class="back-button" href="' . $_SERVER['HTTP_REFERER'] . '">◄ Back to Listings</a>';
+  $output .= '<a class="btn btn-primary back-button" href="' . $_SERVER['HTTP_REFERER'] . '">◄ Back to Listings</a>';
 
   return $output;
 }

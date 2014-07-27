@@ -26,14 +26,7 @@
   width: 300px;
 }
 #ors-realestate.shortcode header {
-  font-size: 16pt;
-  font-weight: bold;
-  font-style: normal;
-  margin-top: 10px;
-  padding: 4px;
-  color: #eee;
-  background: #555;
-  border-radius: 5px 5px 0 0;
+  font-size: bigger;
 }
 #ors-realestate.shortcode .attachment-medium {
   margin: 0px;
@@ -45,12 +38,6 @@
   text-align: center;
 }
 #ors-realestate.listings article {
-  display: inline-block;
-  width: 45%;
-  border: solid 1px #eee;
-  border-radius: 5px;
-  margin-right: 10px;
-  margin-bottom: 10px;
   vertical-align: top;
   min-height: 150px;
   text-align: left;
@@ -61,18 +48,11 @@
   margin: 0 20px 10px 0;
 }
 #ors-realestate.listings article header {
-  background: #eee;
   margin-bottom: 5px;
-}
-#ors-realestate.listings article header a {
-  color: black;
 }
 #ors-realestate.listings article header .price {
   display: inline-block;
-  color: white;
-  background: #900;
   padding: 3px 5px;
-  border-radius: 5px 0 0 0;
 }
 #ors-realestate.listings article header .title {
   display: inline-block;
@@ -94,18 +74,13 @@
   margin: 0;
   padding: 0;
   font-size: 20pt;
-  background: #eee;
-  color: black;
 }
 #ors-realestate.single article header a {
   display: inline-block;
-  color: black;
   padding: 15px;
 }
 #ors-realestate.single article header .price {
   display: inline-block;
-  color: white;
-  background: #900;
   border-radius: 5px 0 0 0;
   float: left;
   padding: 15px;
@@ -153,17 +128,6 @@
   white-space: nowrap;
   font-size: 9pt;
   font-weight: bold;
-}
-#ors-realestate a.back-button {
-  display: block;
-  margin: 10px auto;
-  width: 130px;
-  border: solid 1px black;
-  border-radius: 5px;
-  padding: 2px 5px;
-  background: #eee;
-  color: black;
-  text-align: center;
 }
 #ors-realestate .not-found {
   width: 500px;
