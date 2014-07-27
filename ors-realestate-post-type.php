@@ -90,7 +90,7 @@ function create_realestate_post_type() {
     'has_archive' => true,
     'hierarchical' => false,
     'menu_position' => 6,
-    'supports' => array('title', 'location', 'gallery', 'thumbnail', 'editor', 'tags'),
+    'supports' => array('title', 'location', 'gallery', 'thumbnail', 'editor', 'tags', excerpt),
     'menu_icon' => REALESTATE_PLUGIN_URL . '/icon.png',
     'rewrite' => array(
       'slug' => 'realestates',
@@ -648,7 +648,7 @@ function realestates_func( $atts ) {
 
   $current_property_type  = $atts['type'];
   $args  = array(
-    'posts_per_page'  => $atts['limit'],
+    'posts_per_page'  => (int) $atts['limit'],
     'orderby'         => 'rand',
     'post_type'       => 'realestate',
     'post_status'     => 'publish',
@@ -657,6 +657,7 @@ function realestates_func( $atts ) {
 
   add_filter( 'posts_clauses', 'by_property_type' );
   $posts = get_posts($args);
+  $output = '';
 
   foreach ( $posts as $post ) {
     setup_postdata( $post );
@@ -665,7 +666,7 @@ function realestates_func( $atts ) {
       $custom[$key] = $value[0];
     }
 
-    $output  = '<div id="ors-realestate" class="shortcode">';
+    $output .= '<div id="ors-realestate" class="shortcode">';
     $output .= '<a href="' . get_permalink($post->ID) . '" rel="bookmark" title="' . $post->post_title . '">';
     $output .= "<header>$post->post_title</header>";
 
