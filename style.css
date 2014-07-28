@@ -64,7 +64,7 @@
 }
 
 #ors-realestate.listings ul.meta,
-#ors-realestate.listings li.meta {
+#ors-realestate.listings ul.meta li {
   list-style: none;
 }
 
@@ -100,6 +100,40 @@
   padding: 15px;
 }
 
+#ors-realestate.single ul.meta,
+#ors-realestate.single ul.downloads {
+  margin: 0 0 25px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#ors-realestate.single ul.meta li,
+#ors-realestate.single ul.downloads li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#ors-realestate.single ul.meta li.header,
+#ors-realestate.single ul.downloads li.header {
+  padding: 5px 0;
+  margin: 0;
+}
+
+#ors-realestate.single ul.meta li,
+#ors-realestate.single ul.downloads li {
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+#ors-realestate.single ul.downloads li {
+  white-space: nowrap;
+}
+
+#ors-realestate.single #inquiry-form {
+  padding-top: 25px;
+  clear: both;
+}
 
 /* Common Real Estate Styles */
 

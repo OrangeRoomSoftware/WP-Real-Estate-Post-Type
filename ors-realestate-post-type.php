@@ -55,8 +55,8 @@ register_activation_hook( __FILE__, 'activate_realestate_post_type' );
 function activate_realestate_post_type() {
   create_realestate_post_type();
   flush_rewrite_rules();
-  add_option( 'ors-realestate-global-features', '2 Car Garage|4 Car Garage|Air Conditioning|Alarm|Assigned Parking|Ceiling Fan|Central Heating|Covered Parking|Den/Office|Dining Area|Dining Room|Dishwasher|Disposal|Enclosed Patios|Evaporative Cooler|Family Room|Fenced Back Yard|Fireplace|Full Kitchen|Game Room|Garage|Generous Closet Areas|Interior Storage|Living Room|Loft|Microwave|Patio|RV Parking|Refrigerator|Separate Dining Room|Spa|Sprinklers|Storage Shed|Stove/Oven|Swimming Pool|Utility Room|Washer/Dryer|Washer/Dryer Hookup|Central Vac', '', true );
-  add_option( 'ors-realestate-global-options', 'Pool Service|Pest Control Service|Yard Service|Sewer and Trash|Playground|Small Pets Considered|Tennis Court|Garbage Pickup|Satellite TV|Water', '', true );
+  add_option( 'ors-realestate-global-features', '', '', true );
+  add_option( 'ors-realestate-global-options', '', '', true );
 }
 
 #
@@ -207,6 +207,11 @@ function custom_realestate_meta_boxes() {
     <input type="button" id="add-option-button" value="Add">
   </p>
 
+  <p>
+    Downloads: (one: "name,url" per line)<br>
+    <textarea name="realestate_meta[downloads]" cols=60 rows=10><?php echo $custom_data['downloads'][0]; ?></textarea>
+  </p>
+
   <?php
 }
 
@@ -296,6 +301,9 @@ function realestate_custom_columns($column){
       break;
     case "city":
       echo $custom["city"][0];
+      break;
+    case "downloads":
+      echo $custom["downloads"][0];
       break;
   }
 }
@@ -569,6 +577,8 @@ function realestate_content_filter($content) {
     $custom[$key] = $value[0];
   }
 
+  $downloads = explode("\n", $custom['downloads']);
+
   if ( $custom['available'] == 'Coming Soon' ) $visible = false; else $visible = true;
 
   $address = $custom['street'] . ", " . $custom['city'] . ", " . $custom['state'] . "  " . $custom['zip'];
@@ -583,13 +593,31 @@ function realestate_content_filter($content) {
   $output .= $content;
 
   $output .= "<ul class='meta'>";
-  if ( $visible ) $output .= "  <li>Address: " . $address . '</li>';
-  $output .= "  <li>" . $custom['bedrooms'] . ' Bedrooms ';
-  $output .= "  " . $custom['bathrooms'] . ' Bath</li>';
+  $output .= "<li class='header'>Property Details:</li>";
+
+  if ( $visible )
+    $output .= "  <li>Address: " . $address . '</li>';
+
+  if ( $custom['bedrooms'] )
+    $output .= "  <li>" . $custom['bedrooms'] . ' Bedrooms ';
+
+  if ( $custom['bathrooms'] )
+    $output .= "  " . $custom['bathrooms'] . ' Bath</li>';
+
   if ( $custom['home_size'] )
     $output .= "  <li>{$custom['home_size']} Square Foot {$custom['property_type']}</li>";
+
   if ( $custom['lot_size'] )
     $output .= "  <li>{$custom['lot_size']} Square Foot Lot</li>";
+
+  $output .= "</ul>";
+
+  $output .= "<ul class='downloads'>";
+  $output .= "<li class='header'>Downloads:</li>";
+  foreach ($downloads as $download) {
+    $parts = explode(',', $download);
+    $output .= "<li><a href='" . $parts[1] . "'>" . $parts[0] . "</a></li>";
+  }
   $output .= "</ul>";
 
   if ( is_array($features) and !empty($features[0]) ) {

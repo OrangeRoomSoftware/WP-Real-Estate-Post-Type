@@ -17,6 +17,18 @@
         </section>
       </article>
     <?php endwhile; ?>
+    <?php if ( function_exists( 'wp_paginate' ) ) {
+      wp_paginate();
+    } else { ?>
+      <nav class="navigation">
+        <span class="nav-previous">
+          <?php next_posts_link(__('&larr; Previous')); ?>
+        </span>
+        <span class="nav-next">
+          <?php previous_posts_link(__('Next &rarr;')); ?>
+        </span>
+      </nav>
+    <?php } ?>
   <?php else : ?>
     <article id="404-not-found">
       <header>
