@@ -44,7 +44,11 @@ function ors_realestate_admin_stylesheets() {
 #
 add_action('admin_print_scripts', 'ors_realestate_plugin_admin_script', 5);
 function ors_realestate_plugin_admin_script() {
-  wp_register_script( 'ors_realestate_plugin_admin_script', REALESTATE_PLUGIN_URL . "/admin-script.js", 'jquery', time() );
+  wp_register_script(
+    'ors_realestate_plugin_admin_script',
+    REALESTATE_PLUGIN_URL . "/admin-script.js",
+    'jquery', time()
+  );
   wp_enqueue_script('ors_realestate_plugin_admin_script');
 }
 

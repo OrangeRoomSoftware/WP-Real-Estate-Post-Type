@@ -23,7 +23,6 @@
 /* Real Estate Shortcode */
 #ors-realestate.shortcode {
   display: inline-block;
-  width: 300px;
 }
 #ors-realestate.shortcode header {
   font-size: bigger;
